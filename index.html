@@ -1,60 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>Selfie of the Day</title>
-
-<style>
-html, body {
-  margin: 0;
-  height: 100%;
-  background: #111;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Cadre verrouillé en ratio 5:4 */
-.frame {
-  position: relative;
-  width: min(95vw, 95vh * 1.25);
-  aspect-ratio: 5 / 4;
-  background: url("frame.png") center/contain no-repeat;
-}
-
-/* Zone intérieure calibrée pour TON cadre */
-.inner {
-  position: absolute;
-  top: 20%;
-  left: 18%;
-  width: 64%;
-  height: 60%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-/* Image */
-.photo {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* ou cover */
-}
-</style>
+  <meta charset="UTF-8">
+  <title>Selfie of the Day</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div id="date-display"></div>
 
-<div class="frame">
-  <div class="inner">
-    <img id="photo" class="photo">
+  <div class="container">
+    <img class="frame-image" src="frame.png" alt="Cadre">
+    <img id="daily-image" src="" alt="Selfie du jour">
   </div>
-</div>
 
-<script>
-document.getElementById("photo").src =
-  "uploads/current.jpg?t=" + new Date().getTime();
-</script>
-
+  <script src="images.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
